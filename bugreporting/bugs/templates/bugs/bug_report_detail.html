@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ bug.title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ bug.title }}</h1>
+        <p>{{ bug.description }}</p>
+        <p>Status: {{ bug.get_status_display }}</p>
+        <p>Reported by: {{ bug.reported_by }}</p>
+        <p>Created at: {{ bug.created_at }}</p>
+        <p>Updated at: {{ bug.updated_at }}</p>
+        <a href="{% url 'bug_report_list' %}">Back to list</a>
+    </div>
+</body>
+</html>
